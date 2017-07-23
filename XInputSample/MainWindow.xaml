@@ -1,0 +1,26 @@
+﻿<Window x:Class="XControllerTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XControllerTool"
+        xmlns:vm="clr-namespace:XControllerTool.Models"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="XControllerTool" ResizeMode="CanMinimize" Width="270" Height="445">
+
+    <Window.DataContext>
+        <vm:MainWindowModel />
+    </Window.DataContext>
+    <StackPanel Margin="20,15,20,0">
+        <Button Command="{Binding PowerOffAllControllerAndExitCommad}"  Height="50">全てのコントローラの電源を切って終了</Button>
+        <local:ControllerStatusView x:Name="ct0" ControllerNo="0" />
+        <local:ControllerStatusView x:Name="ct1" ControllerNo="1" />
+        <local:ControllerStatusView x:Name="ct2" ControllerNo="2" />
+        <local:ControllerStatusView x:Name="ct3" ControllerNo="3" />
+        <Button Command="{Binding UpdateAllControllerStatusCommand}" Height="25" Margin="0,0,0,10">更新</Button>
+        <TextBlock TextAlignment="Right">
+            Liblary:<Hyperlink NavigateUri="https://twitter.com/0dd14">@0dd14</Hyperlink>,
+            Made By:<Hyperlink NavigateUri="https://twitter.com/kassyi">@kassyi</Hyperlink></TextBlock>
+    </StackPanel>
+</Window>
