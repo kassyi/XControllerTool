@@ -13,3 +13,6 @@
 
 ## DL
 [releaseページ](https://github.com/kassyi/XControllerTool/releases/)からどうぞ
+
+## License
+MIT License
